@@ -1,0 +1,89 @@
+{
+  "experiences": [
+    {
+      "id": 1,
+      "position": "Mobile Backend Developer",
+      "company": "PT. Pegadaian Galeri 24",
+      "location": "Jakarta Pusat, Indonesia",
+      "startDate": "2025-10",
+      "endDate": "Present",
+      "description": "Responsible for developing and maintaining backend services for the Galeri 24 mobile application. Optimized application workflows by 40%, managed system maintenance, and implemented automated background tasks using cron jobs. Additionally, handled application deployment to staging environments via Google Cloud Platform (GCP).",
+      "achievements": [
+        "Optimized API performance, resulting in faster response times for customer requests.",
+    "Enhanced order flow efficiency, contributing to a 40% improvement in system processing.",
+    "Successfully designed and implemented a custom scheduler system to automate core business processes."
+      ],
+      "technologies": [
+        "C#",".NET","Entity Framework","PostgreSQL","GCP","Jira"
+      ]
+    },
+    {
+      "id": 2,
+      "position": "Web & Mobile Developer",
+      "company": "Telkom Akses",
+      "location": "Yogyakarta, Indonesia",
+      "startDate": "2025-05",
+      "endDate": "2025-10",
+      "description": "Handling frontend development for web applications and mobile apps, utilizing modern technologies like Flutter, CI, and Node.js. Focused on creating responsive designs and efficient backend systems.",
+      "achievements": [
+        "Improve performance of existing applications",
+        "Maintaining and updating web & mobile platforms",
+        "Fixed bugs and implemented new features"
+      ],
+      "technologies": ["Flutter", "Code Igniter", "PHP", "DBeaver", "SQL"]
+    },
+    {
+      "id": 3,
+      "position": "Fullstack Developer",
+      "company": "GeekGarden",
+      "location": "Yogyakarta, Indonesia",
+      "startDate": "2024-11",
+      "endDate": "2025-05",
+      "description": "I worked as a developer at GeekGarden Software House, where I contributed to multiple projects, collaborated with experienced teams, and strengthened my skills in mobile development with Flutter and backend development with .NET Core. My experience there helped me adopt best practices in software engineering and improve my professional growth.",
+      "achievements": [
+        "Optimized app performance and code maintainability.",
+        "Introduced best practices to improve team development workflows.",
+        "Collaborated with cross-functional teams for successful product launches."
+      ],
+      "technologies": ["C#", ".NET Core", "ASP.NET", "SQL Server"]
+    },
+    {
+      "id": 4,
+      "position": "Programmer",
+      "company": "Freelancer",
+      "location": "Indonesia",
+      "startDate": "2022-01",
+      "endDate": "2025-01",
+      "description": "As a freelance developer on Fastwork, I have successfully delivered various projects for clients, specializing in mobile and web application development. My work includes building cross-platform apps with Flutter, developing backend services with .NET Core, and creating modern, responsive websites. Through freelancing, I have honed my skills in understanding client requirements, providing effective solutions, and managing projects independently while ensuring high-quality results and timely delivery.",
+      "achievements": [
+        "Completed freelance projects with excellent client feedback.",
+        "Delivered cross-platform apps and responsive websites on time.",
+        "Built scalable backends using .NET Core for client projects.",
+        "Maintained strong client relationships leading to repeat work."
+      ],
+      "technologies": ["Flutter", "GetX", "BLoC", "SQLite", "Clean Architecture","C#", ".NET Core", "ASP.NET", "SQL Server","Winform","WPF","FIrebase","Supabase"]
+    },
+    {
+        "id": 5,
+        "position": "Assistant Practicum & Laboratory Administrator",
+        "company": "UPN Veteran Yogyakarta",
+        "location": "Yogyakarta, Indonesia",
+        "startDate": "2022-08",
+        "endDate": "2025-02",
+        "description": "Worked as a teaching assistant for programming and IT-related practical classes, assisting students in understanding course material and guiding them through hands-on labs. Also supported administrative tasks in the campus IT department, including maintaining lab equipment and managing class schedules.",
+        "achievements": [
+            "Successfully mentored over 100 students in practical programming courses",
+            "Helped improve lab session efficiency through better class management",
+            "Assisted lecturers in preparing teaching materials and assessments"
+        ],
+        "technologies": [
+            "Java",
+            "C++",
+            "SQL",
+            "Flutter",
+            "Mikrotik",
+            "Cisco"
+        ]
+    }
+  ]
+}

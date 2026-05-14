@@ -1,0 +1,90 @@
+{
+  "projects": [
+    {
+      "id":5,
+      "title": "Clean Arch Tool",
+      "description": "A command-line tool for automating the creation of clean architecture folder and file structures in Flutter projects. This tool helps developers start a Flutter project with a neat and well-structured architecture using just one command.",
+      "image": "img/cleanarchtool.jpg",
+      "technologies": ["Dart","Command Line Tool" ,"Clean Architecture"],
+      "links": {
+        "github": [
+            "https://github.com/Kavarera/dart-clean-arch-tool"
+        ]
+      },
+      "developers": [
+        {
+          "name": "Kavarera",
+          "link": "https://www.instagram.com/r_kavarera"
+        }
+      ],
+      "featured": true
+    },
+    {
+      "id": 1,
+      "title": "Notes App",
+      "description": "Notes App is a Flutter-based note-taking application I developed for my thesis research. I created two identical versions using different state management approaches, GetX and BLoC, to compare their performance. The app supports CRUD features, categories, search functionality, and local storage with SQLite, all built with a Clean Architecture approach to ensure code quality and maintainability.",
+      "image": "img/aplikasi-note.jpg",
+      "technologies": ["Flutter", "GetX", "BLoC", "SQLite", "Clean Architecture"],
+      "links": {
+        "github": [
+            "https://github.com/Kavarera/NoteApp-CleanArch-GETX",
+            "https://github.com/Kavarera/NotesApp_Bloc"
+        ]
+      },
+      "developers": [
+        {
+          "name": "Kavarera",
+          "link": "https://www.instagram.com/r_kavarera"
+        }
+      ],
+      "featured": true
+    },
+
+    {
+      "id": 2,
+      "title": "PademPedia",
+      "description": "Padempedia.com is a web platform I developed during my community service (KKN) program to provide comprehensive information about the village, including profiles, local news, community blogs, and a marketplace for local products. The website also features infographics to help residents and visitors easily understand important information about the village and its economy.",
+      "image": "img/padempedia.png",
+      "technologies": ["Flutter", "Getx", "SQLite","Firebase"],
+      "links": {
+        "demo": "https://www.padempedia.com/"
+      },
+      "developers": [
+        {
+          "name": "Kavarera",
+          "link": "https://www.instagram.com/r_kavarera"
+        },
+        {
+          "name": "Denisha",
+          "link": "https://www.instagram.com/denishazzahra/"
+        }        
+      ],
+      "featured": true
+    },
+
+    {
+      "id": 3,
+      "title": "Image Processing App",
+      "description": "Image Processing App is a Flutter-based desktop application I developed to apply various image editing effects, such as crop, resize, rotate, grayscale, brightness, sepia, negative, vignette, and gamma adjustments. The app features an intuitive interface for easy image manipulation, built to deepen my understanding of digital image processing and cross-platform desktop development.",
+      "image": "img/profile-png.png",
+      "technologies": ["Flutter", "Getx", "SQLite"],
+      "links": {
+        "github": [
+            "https://github.com/Kavarera/image-processing-app"
+        ]
+      },
+      "developers": [
+        {
+          "name": "Kavarera",
+          "link": "https://www.instagram.com/r_kavarera"
+        },
+        {
+          "name": "Fitra",
+          "link": "https://www.instagram.com/fitraartora/"
+        }
+        
+      ],
+      "featured": true
+    }
+  ]
+}
