@@ -49,15 +49,21 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
-      - name: Execute SSH Commands on VPS
-        uses: appleboy/ssh-action@v1.0.3
+      - name: Setup SSH Agent
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          port: ${{ secrets.VPS_PORT || '22' }}
-          script: |
+          ssh-private-key: ${{ secrets.VPS_SSH_KEY }}
+
+      - name: Add VPS to known_hosts
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -p ${{ secrets.VPS_PORT || '22' }} -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Deploy to VPS via SSH
+        run: |
+          ssh -p ${{ secrets.VPS_PORT || '22' }} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }} << "
             cd ${{ secrets.VPS_TARGET_DIR || '/var/www/portfolio' }}
             export GITHUB_REPOSITORY_OWNER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
             docker compose pull portfolio
             docker compose up -d
+          "
