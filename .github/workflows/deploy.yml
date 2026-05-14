@@ -49,6 +49,9 @@ jobs:
     needs: build-and-push
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Setup SSH Agent
         uses: webfactory/ssh-agent@v0.9.0
         with:
@@ -59,11 +62,19 @@ jobs:
           mkdir -p ~/.ssh
           ssh-keyscan -p ${{ secrets.VPS_PORT || '22' }} -H ${{ secrets.VPS_HOST }} >> ~/.ssh/known_hosts
 
+      - name: Create target directory on VPS
+        run: |
+          ssh -p ${{ secrets.VPS_PORT || '22' }} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }} "mkdir -p ${{ secrets.VPS_TARGET_DIR || '/portofolio' }}"
+
+      - name: Copy docker-compose.yml to VPS
+        run: |
+          scp -P ${{ secrets.VPS_PORT || '22' }} docker-compose.yml ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_TARGET_DIR || '/portofolio' }}/docker-compose.yml
+
       - name: Deploy to VPS via SSH
         run: |
-          ssh -p ${{ secrets.VPS_PORT || '22' }} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }} << "
-            cd ${{ secrets.VPS_TARGET_DIR || '/var/www/portfolio' }}
+          ssh -p ${{ secrets.VPS_PORT || '22' }} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }} << 'EOF'
+            cd ${{ secrets.VPS_TARGET_DIR || '/portofolio' }}
             export GITHUB_REPOSITORY_OWNER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
             docker compose pull portfolio
             docker compose up -d
-          "
+          EOF
