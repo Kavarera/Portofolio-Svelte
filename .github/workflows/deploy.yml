@@ -8,7 +8,6 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository_owner }}/portofolio-svelte
 
 jobs:
   build-and-push:
@@ -31,6 +30,10 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Format lowercase image name
+        run: |
+          echo "IMAGE_NAME=$(echo '${{ github.repository_owner }}/portofolio-svelte' | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
@@ -55,6 +58,6 @@ jobs:
           port: ${{ secrets.VPS_PORT || '22' }}
           script: |
             cd ${{ secrets.VPS_TARGET_DIR || '/var/www/portfolio' }}
-            export GITHUB_REPOSITORY_OWNER=${{ github.repository_owner }}
+            export GITHUB_REPOSITORY_OWNER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
             docker compose pull portfolio
             docker compose up -d
