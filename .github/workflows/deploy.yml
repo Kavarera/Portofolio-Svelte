@@ -64,16 +64,16 @@ jobs:
 
       - name: Create target directory on VPS
         run: |
-          ssh -p ${{ secrets.VPS_PORT || '22' }} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }} "mkdir -p ${{ secrets.VPS_TARGET_DIR || '/portofolio' }}"
+          ssh -p ${{ secrets.VPS_PORT || '22' }} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }} "mkdir -p ${{ secrets.VPS_TARGET_DIR || '/var/www/portofolio' }}"
 
       - name: Copy docker-compose.yml to VPS
         run: |
-          scp -P ${{ secrets.VPS_PORT || '22' }} docker-compose.yml ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_TARGET_DIR || '/portofolio' }}/docker-compose.yml
+          scp -P ${{ secrets.VPS_PORT || '22' }} docker-compose.yml ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }}:${{ secrets.VPS_TARGET_DIR || '/var/www/portofolio' }}/docker-compose.yml
 
       - name: Deploy to VPS via SSH
         run: |
           ssh -p ${{ secrets.VPS_PORT || '22' }} ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_HOST }} << 'EOF'
-            cd ${{ secrets.VPS_TARGET_DIR || '/portofolio' }}
+            cd ${{ secrets.VPS_TARGET_DIR || '/var/www/portofolio' }}
             export GITHUB_REPOSITORY_OWNER=$(echo '${{ github.repository_owner }}' | tr '[:upper:]' '[:lower:]')
             docker compose pull portfolio
             docker compose up -d
